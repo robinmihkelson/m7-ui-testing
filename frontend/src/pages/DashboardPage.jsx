@@ -37,18 +37,18 @@ export default function DashboardPage() {
 
         <div className="section-heading">Quick links</div>
         <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-          <Link to="/books" className="btn btn-secondary" data-testid="nav-books">
+          <Link to="/books" className="btn btn-secondary" data-testid="dashboard-link-books">
             Browse Books
           </Link>
-          <Link to="/my-reservations" className="btn btn-secondary" data-testid="nav-my-reservations">
+          <Link to="/my-reservations" className="btn btn-secondary" data-testid="dashboard-link-reservations">
             My Reservations
           </Link>
           {user?.role === "admin" && (
             <>
-              <Link to="/admin/books" className="btn btn-secondary" data-testid="nav-admin-books">
+              <Link to="/admin/books" className="btn btn-secondary" data-testid="dashboard-link-admin-books">
                 Admin: Books
               </Link>
-              <Link to="/admin/reservations" className="btn btn-secondary" data-testid="nav-admin-reservations">
+              <Link to="/admin/reservations" className="btn btn-secondary" data-testid="dashboard-link-admin-reservations">
                 Admin: Reservations
               </Link>
             </>
