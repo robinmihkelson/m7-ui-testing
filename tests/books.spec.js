@@ -1,12 +1,15 @@
 import { test, expect } from "@playwright/test";
 import { studentTest, BOOKS } from "./helpers.js";
 
-studentTest.fixme("books page loads", async ({ page }) => {
-  // TODO
+studentTest("books page loads", async ({ page }) => {
+    await page.goto("/books");
+    await expect(page.getByTestId("books-list")).toBeVisible();
 });
 
-studentTest.fixme("all 10 seeded books are displayed", async ({ page }) => {
-  // TODO
+studentTest("all 10 seeded books are displayed", async ({ page }) => {
+    await page.goto("/books");
+    const cards = page.getByTestId("books-list").locator("[data-testid^='book-card-']");
+    await expect(cards).toHaveCount(10)
 });
 
 studentTest.fixme("each book shows title and author", async ({ page }) => {
